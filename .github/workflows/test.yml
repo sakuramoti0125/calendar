@@ -28,7 +28,7 @@ jobs:
     - name: Run Tests
       run: |
         echo "Testing main.py with sample input"
-        python main.py << EOF
+        python show_carendar.py << EOF
         2024
         11
         EOF
