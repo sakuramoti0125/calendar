@@ -1,15 +1,13 @@
-#SPDX-FileCopyrightText: 2024 Fumihiro Sakurada
-#SPDX-License-Identifier: BSD-3-Clause
+# SPDX-FileCopyrightText: 2024 Fumihiro Sakurada
+# SPDX-License-Identifier: BSD-3-Clause
 
 import calendar
 
 def main():
-    print("カレンダーを表示します。年と月を入力してください。")
-
     try:
-        # 年と月を入力
-        year = int(input("年を入力してください（例: 2024）: "))
-        month = int(input("月を入力してください（例: 11）: "))
+        # 入力を促さずに一行で年と月を取得
+        input_data = input().strip()
+        year, month = map(int, input_data.split())
 
         # 入力値が妥当か確認
         if month < 1 or month > 12:
@@ -22,7 +20,9 @@ def main():
         print("\n" + cal_output)
 
     except ValueError:
-        print("無効な入力です。年と月は整数で入力してください。")
+        print("無効な入力です。年と月は整数で、スペースで区切って入力してください。")
+    except Exception as e:
+        print(f"エラーが発生しました: {e}")
 
 if __name__ == "__main__":
     main()
