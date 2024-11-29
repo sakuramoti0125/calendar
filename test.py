@@ -49,6 +49,42 @@ class TestCalendarProgram(unittest.TestCase):
         sys.stdout = sys.__stdout__  # 標準出力を元に戻す
         self.assertEqual(output.getvalue(), expected_output)  # 出力を検証
 
+    def test_invalid_month_zero(self):
+        """月が0の場合"""
+        input_data = "2024\n0\n"
+        expected_output = (
+        "カレンダーを表示します。年と月を入力してください。\n"
+        "年を入力してください: 月を入力してください: 月は1から12の間で入力してください。\n"
+        )
+        self._run_test(input_data, expected_output)
+
+    def test_invalid_month_greater_than_twelve(self):
+        """月が13以上の場合"""
+        input_data = "2024\n13\n"
+        expected_output = (
+        "カレンダーを表示します。年と月を入力してください。\n"
+        "年を入力してください: 月を入力してください: 月は1から12の間で入力してください。\n"
+        )
+        self._run_test(input_data, expected_output)
+
+    def test_extreme_year_past(self):
+        """過去の年（1800年）"""
+        input_data = "1800\n11\n"
+        expected_output = (
+        "カレンダーを表示します。年と月を入力してください。\n"
+        "年を入力してください: 月を入力してください: 1800年11月のカレンダーを表示します。（ここにカレンダー表示）\n"
+        )
+        self._run_test(input_data, expected_output)
+
+    def test_extreme_year_future(self):
+        """未来の年（3000年）"""
+        input_data = "3000\n11\n"
+        expected_output = (
+        "カレンダーを表示します。年と月を入力してください。\n"
+        "年を入力してください: 月を入力してください: 3000年11月のカレンダーを表示します。（ここにカレンダー表示）\n"
+        )
+        self._run_test(input_data, expected_output)
+
 if __name__ == "__main__":
     unittest.main()
 
