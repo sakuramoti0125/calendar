@@ -1,4 +1,4 @@
-#!/usr/bin/python3 -xv
+#!/usr/bin/env python3 -xv
 #SPDX-FileCopyrightText: 2024 Fumihiro Sakurada
 #SPDX-License-Identifier: BSD-3-Clause
 
