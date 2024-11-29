@@ -42,7 +42,7 @@ formatmonthでは、指定されたyearとmonthのカレンダーを文字列と
     & echo "2024 11" | python3 show_calendar.py
     ```
 
-##### 使用例
+##### 実行例
 
 ```
        November 2024
@@ -58,7 +58,7 @@ formatmonthでは、指定されたyearとmonthのカレンダーを文字列と
 
 #### 必要なソフトウェア
 - Python
-  - テスト済みバージョン: 3.7~3.11
+  - テスト済みバージョン: 3.7~3.12
 
 #### テスト環境
 - Ubuntu 24.04.1 LTS
