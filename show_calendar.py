@@ -1,3 +1,6 @@
+#SPDX-FileCopyrightText: 2024 Fumihiro Sakurada
+#SPDX-License-Identifier: BSD-3-Clause
+
 import calendar
 
 def main():
