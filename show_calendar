@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+# SPDX-FileCopyrightText: 2024 Fumihiro Sakurada
+# SPDX-License-Identifier: BSD-3-Clause
+
+import calendar
+import sys
+
+def main():
+    # 年と月の入力を取得
+    input_data = input().strip()
+
+    # 入力が正しい形式か確認
+    if not input_data.replace(" ", "").isdigit():
+        sys.exit(1)
+
+    # 入力を分割して年と月を取得
+    inputs = input_data.split()
+    if len(inputs) != 2:
+        sys.exit(1)
+
+    year, month = map(int, inputs)
+
+    # 月の妥当性をチェック
+    if month < 1 or month > 12:
+        sys.exit(1)
+
+    # カレンダーを生成
+    cal = calendar.TextCalendar()
+    cal_output = cal.formatmonth(year, month)
+    print("\n" + cal_output)
+
+if __name__ == "__main__":
+    main()
+
