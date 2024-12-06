@@ -40,6 +40,22 @@ out=$(echo "2024" | ./show_calendar 2>&1)
 out=$(echo " " | ./show_calendar 2>&1)
 [ "${out}" = "" ] || ng "${LINENO}"
 
+# テストケース 6: 日本語入力
+out=$(echo "こんにちわ" | ./show_calendar 2>&1)
+[ "${out}" = "" ] || ng "${LINENO}"
+
+# テストケース 7: アルファベット入力
+out=$(echo "NAkajiMA" | ./show_calendar 2>&1)
+[ "${out}" = "" ] || ng "${LINENO}"
+
+# テストケース 8: スペースなし入力
+out=$(echo "20048" | ./show_calendar 2>&1)
+[ "${out}" = "" ] || ng "${LINENO}"
+
+# テストケース 9: 記号入力
+out=$(echo "$%#" | ./show_calendar 2>&1)
+[ "${out}" = "" ] || ng "${LINENO}"
+
 
 echo "All tests passed!"
 
