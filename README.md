@@ -27,19 +27,12 @@ formatmonthでは、指定されたyearとmonthのカレンダーを文字列と
 ##### 実行方法
 1. 実行権限を与えてください。 
     ```
-    $ chmod +x show_calendar.py
+    $ chmod +x show_calendar
     ```
 
 2. プログラムを実行するには、以下のコマンドを入力します。
     ```
-    $ python3 show_calendar.py
-    (例)2024 11
-    ```
-    プログラム実行後(例)のように 年 月 を入力してください。
-
-3. パイプして実行する場合
-    ```
-    & echo "2024 11" | python3 show_calendar.py
+    & echo "2024 11" | ./show_calendar
     ```
 
 ##### 実行例
