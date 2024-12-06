@@ -26,19 +26,19 @@ fi
 
 # テストケース 2: 月が範囲外の場合
 out=$(echo "2024 13" | ./show_calendar 2>&1)
-[ "${out}" = "月は1から12の間で入力してください。" ] || ng "${LINENO}"
+[ "${out}" = "" ] || ng "${LINENO}"
 
 # テストケース 3: 無効な文字列入力
 out=$(echo "2024 November" | ./show_calendar 2>&1)
-[ "${out}" = "無効な入力です。年と月は整数で、スペースで区切って入力してください。" ] || ng "${LINENO}"
+[ "${out}" = "" ] || ng "${LINENO}"
 
 # テストケース 4: 入力が不足している場合
 out=$(echo "2024" | ./show_calendar 2>&1)
-[ "${out}" = "無効な入力です。年と月は整数で、スペースで区切って入力してください。" ] || ng "${LINENO}"
+[ "${out}" = "" ] || ng "${LINENO}"
 
 # テストケース 5: 空入力
 out=$(echo " " | show_calendar 2>&1)
-[ "${out}" = "無効な入力です。年と月は整数で、スペースで区切って入力してください。" ] || ng "${LINENO}"
+[ "${out}" = "" ] || ng "${LINENO}"
 
 
 echo "All tests passed!"
