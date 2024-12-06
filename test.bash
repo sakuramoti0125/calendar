@@ -37,7 +37,7 @@ out=$(echo "2024" | ./show_calendar 2>&1)
 [ "${out}" = "" ] || ng "${LINENO}"
 
 # テストケース 5: 空入力
-out=$(echo " " | show_calendar 2>&1)
+out=$(echo " " | ./show_calendar 2>&1)
 [ "${out}" = "" ] || ng "${LINENO}"
 
 
