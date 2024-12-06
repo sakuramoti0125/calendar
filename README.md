@@ -32,7 +32,7 @@ formatmonthでは、指定されたyearとmonthのカレンダーを文字列と
 
 2. プログラムを実行するには、以下のコマンドを入力します。
     ```
-    & echo "2024 11" | ./show_calendar
+    $ echo "2024 11" | ./show_calendar
     ```
 
 ##### 実行例
